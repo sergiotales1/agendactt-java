@@ -3,6 +3,8 @@ package model;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 
 public class DAO {
 	/** Modulo de conexao **/
@@ -46,6 +48,33 @@ public class DAO {
 
 		} catch (Exception e) {
 			System.out.println(e);
+		}
+	}
+
+	/** CRUD READ **/
+	public ArrayList<JavaBeans> listarContatos() {
+		// Criando obj para acessar JavaBeans
+		ArrayList<JavaBeans> contatos = new ArrayList<>();
+		String read = "select * from contatos order by nome";
+		try {
+			Connection con = conectar();
+			PreparedStatement pst = con.prepareStatement(read);
+			ResultSet rs = pst.executeQuery();
+			// loop executed while remain ctts
+			while (rs.next()) {
+				// variaveis que recebem data
+				String idcon = rs.getString(1);
+				String nome = rs.getString(2);
+				String fone = rs.getString(3);
+				String email = rs.getString(4);
+				// populando o arraylist
+				contatos.add(new JavaBeans(idcon, nome, fone, email));
+			}
+			con.close();
+			return contatos;
+		} catch (Exception e) {
+			System.out.println(e);
+			return null;
 		}
 	}
 }
