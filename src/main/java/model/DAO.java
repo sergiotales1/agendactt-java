@@ -6,14 +6,30 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class DAO.
+ */
 public class DAO {
-	/** Modulo de conexao **/
+	
+	/**  Modulo de conexao *. */
 	// Parametros de conexao
 	private String driver = "com.mysql.cj.jdbc.Driver";
+	
+	/** The url. */
 	private String url = "jdbc:mysql://127.0.0.1:3306/dbagenda?useTimezone=true&serverTimezone=UTC";
+	
+	/** The user. */
 	private String user = "root";
+	
+	/** The password. */
 	private String password = "password";
 
+	/**
+	 * Conectar.
+	 *
+	 * @return the connection
+	 */
 	// Metodo de conexao
 	private Connection conectar() {
 		Connection con = null;
@@ -27,7 +43,11 @@ public class DAO {
 		}
 	}
 
-	/** CRUD CREATE **/
+	/**
+	 *  CRUD CREATE *.
+	 *
+	 * @param contato the contato
+	 */
 	public void inserirContato(JavaBeans contato) {
 		String create = "insert into contatos (nome,fone,email) values (?,?,?)";
 		try {
@@ -51,7 +71,11 @@ public class DAO {
 		}
 	}
 
-	/** CRUD READ **/
+	/**
+	 *  CRUD READ *.
+	 *
+	 * @return the array list
+	 */
 	public ArrayList<JavaBeans> listarContatos() {
 		// Criando obj para acessar JavaBeans
 		ArrayList<JavaBeans> contatos = new ArrayList<>();
@@ -78,7 +102,11 @@ public class DAO {
 		}
 	}
 	
-	/** CRUD UPDATE **/
+	/**
+	 *  CRUD UPDATE *.
+	 *
+	 * @param contato the contato
+	 */
 	
 	public void selecionarContato(JavaBeans contato) {
 		String read2 = "select * from contatos where idcon = ?";
@@ -99,6 +127,11 @@ public class DAO {
 		}
 	}
 	
+	/**
+	 * Alterar contato.
+	 *
+	 * @param contato the contato
+	 */
 	// editar ctt
 	public void alterarContato(JavaBeans contato) {
 		String create = "update contatos set nome=?, fone=?, email=? where idcon=?";
@@ -116,7 +149,11 @@ public class DAO {
 		}
 	}
 	
-	/** CRUD DELETE **/
+	/**
+	 *  CRUD DELETE *.
+	 *
+	 * @param contato the contato
+	 */
 	public void deletarContato(JavaBeans contato) {
 		String delete = "delete from contatos where idcon=?";
 		try {
@@ -130,3 +167,4 @@ public class DAO {
 		}
 	}
 }
+
