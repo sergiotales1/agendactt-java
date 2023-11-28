@@ -1,0 +1,5 @@
+INDEX VERSION 1.134
+/home/sergio/eclipse-workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3683381220.index
+/Hello jsp/src/main/java
+/home/sergio/eclipse-workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2944460114.index
+/agenda/src/main/java

@@ -1,0 +1,7 @@
+/**
+ * validacao de formulario
+ */
+
+ function validar(){
+	 alert('test')
+ }

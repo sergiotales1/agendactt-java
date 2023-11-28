@@ -1,0 +1,3 @@
+#Tomcat publish data
+#Tue Nov 28 13:41:20 BRT 2023
+org.eclipse.jst.jee.server\:agenda=/home/sergio/Downloads/apache-tomcat-9.0.83/wtpwebapps/agenda
